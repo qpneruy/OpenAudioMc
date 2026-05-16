@@ -19,7 +19,7 @@ public class RegionsSubCommand extends SubCommand {
         super("region");
 
         registerSubCommands(
-                new RegionCreateSubCommand(openAudioMcSpigot),
+                new RegionCreateSubCommand(openAudioMcSpigot, this),
                 new RegionDeleteSubCommand(openAudioMcSpigot),
                 new RegionTempSubCommand(openAudioMcSpigot),
                 new RegionEditSubCommand(openAudioMcSpigot),
@@ -49,6 +49,9 @@ public class RegionsSubCommand extends SubCommand {
 
                 new Argument("edit fade <region> <fade time MS>",
                         "Change the fade of a region"),
+
+                new Argument("edit sync <region> <true/false>",
+                        "Enable/disable region syncronization (sync media between players, don't start from the beginning"),
 
                 new Argument("list",
                         "List all regions at your current location and their properties"),
